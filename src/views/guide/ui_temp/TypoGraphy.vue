@@ -8,6 +8,12 @@
           </ul>
         </div>
       </div>
+      <TitleH3 titleh3="H 태그 가이드" />
+      <div class="wsg-guide-content">
+      </div>
+      <TitleH3 titleh3="문단 가이드" />
+      <div class="wsg-guide-content">
+      </div>      
       <TitleH3 titleh3="한줄 말 줄임" />
       <div class="wsg-guide-content">
         <div class="wsg-note__wrap--gray-box">

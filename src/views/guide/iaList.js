@@ -7,7 +7,8 @@ const guideList = [
     {
         "depth1" : "컴포넌트",
         "depth2" : "타이포 그래피",        
-        "status" : ""
+        "status" : "",
+        "link": "/TypoGraphy"
     },     
     {
         "depth2" : "TABLE",
