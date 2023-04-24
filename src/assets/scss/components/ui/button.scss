@@ -1,0 +1,36 @@
+//버튼 공통
+@mixin btnCommon {
+  position: relative;
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: .2em;
+  line-height: normal;
+  max-width: 100%;  
+  border-radius: $radius;  
+  text-decoration: none;
+  vertical-align: middle;
+  padding:3px;
+  font-weight: 500;
+}
+@mixin btntype($btnFontSize,$btnBorder,$btnColor,$btnHoverColor,$btnHoverColor,$radius) {  
+  font-size: $btnFontSize;
+  border: $btnBorder;
+  color: $btnColor;
+  background-color: $btnBGColor;
+  &:hover,
+  &:focus,
+  &:active,    
+  &.active:focus, 
+  &:active:hover{
+    background-color: $btnHoverColor;
+    color: $btnHoverColor;
+    text-decoration: none;
+    border-color: $btnHoverColor;
+  }
+}
+
+@mixin btnSize($btnFontSize,$btnPadding) { 
+  font-size: $btnFontSize;
+  padding: $btnPadding;
+}

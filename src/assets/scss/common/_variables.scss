@@ -1,0 +1,25 @@
+// 전역으로 사용되는 mixin 등 전역 변수 정의
+//폰트 
+@mixin fontoption($font-tsize, $font-color, $font-weight) {
+    font-family: $font-family;
+    font-size: $font-tsize;
+    color: $font-color;
+    font-weight: $font-weight;
+    line-height: 1.43;
+    letter-spacing: normal;
+}
+
+//긴 문장 처리
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}

@@ -11,7 +11,14 @@
         </div> 
       </div>                        
     </div>
-        
+    <div class="content-body">
+      <TitleH3 titleh3="폴더 구조" />  
+      <ul class="wsg_desc">
+        <li>2023 RBC 고도화_개발가이드 v1.0_230412 문서의 구조를 따릅니다.</li>
+        <li>퍼블리싱 관련 파일 위치 안내 입니다.</li>
+      </ul>
+      <p><img src="@/assets/images/guide/folder.jpg" alt=""></p>
+    </div>       
     <div class="content-body">
       <TitleH3 titleh3="네이밍 규칙" />  
       <ul class="wsg_desc">

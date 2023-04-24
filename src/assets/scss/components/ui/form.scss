@@ -1,0 +1,93 @@
+//폼 공통요소
+$inputHeight: $inputHeight;
+$font-tsize: $font-tsize;
+$inputColor: $inputColor;
+
+@mixin hiddens {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin inputBasic {  
+    background-color: #fff;    
+    border-radius: 3px;
+    border: 1px solid $bordersColor;    
+    color: $inputColor;
+    display: inline-block;
+    font-size: $font-tsize;
+    height: $inputHeight;
+    line-height: $inputHeight;    
+    padding: 0 15px;    
+    width: 100%;
+}
+
+//check box
+//input 은 숨겨주기
+//checkbox 는 .checkbox 클래스명의 엘리먼트안에 input 관 label 로 구현
+//디자인 구현시 이미지 사용 여부등 결정
+.checkbox {
+  input[type=checkbox] {
+    @include hiddens;
+  }
+  input[type=checkbox] + label {
+    cursor: pointer;
+    &:before{
+      content:"";
+      display:inline-block;
+      width:17px;
+      height:17px;
+      line-height:17px;
+      border:1px solid #cbcbcb;
+      vertical-align:middle;
+      }    
+  } 
+  input[type=checkbox]:checked + label {
+    &:before{
+      content:"\f00c";
+      font-family:"Font Awesome 5 free"; 
+      font-weight:900;
+      color:#fff;
+      background-color:#000;
+      border-color:#000;
+      font-size:13px;
+      text-align:center;
+      }    
+  }
+}
+//radibox
+.radiobox {
+  input[type=radio] {
+    @include hiddens;
+  }
+  input[type=radio] + label {
+    cursor: pointer;
+    &:before{
+      content:"";
+      display:inline-block;
+      width:17px;
+      height:17px;
+      line-height:17px;
+      border:1px solid #cbcbcb;
+      vertical-align:middle;
+      }    
+  } 
+  input[type=radio]:checked + label {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 5px;
+      width: 14px;
+      height: 14px;
+      background: #e86138;
+      border-radius: 100%;
+      box-shadow: none;
+    }    
+  }
+}

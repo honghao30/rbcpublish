@@ -6,12 +6,13 @@ const guideList = [
     },
     {
         "depth1" : "컴포넌트",
-        "depth2" : "타이포 그래프",        
+        "depth2" : "타이포 그래피",        
         "status" : ""
     },     
     {
         "depth2" : "TABLE",
-        "status" : ""
+        "status" : "",
+        "link": "/tableCmp"
     },   
     {
         "depth2" : "폼 요소",
