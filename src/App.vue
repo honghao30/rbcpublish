@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <DefaultLayout />
+    <component :is="layout" />
+    <!-- <DefaultLayout /> -->
   </div>
 </template>
 
 <script>
 import DefaultLayout from './components/layout/DefaultLayout.vue'
+import GuideLayout from './components/layout/GuideLayout.vue'
 
 export default {
   name: 'App',
   components: {
     DefaultLayout,
+    GuideLayout
   },
   data() {
     return {
+      layout: null,
     };
   },
   watch: {
-    
+    $route(to) {
+      if (to.meta.layout !== undefined) {
+        this.layout = to.meta.layout;
+      } else {
+        this.layout = "DefaultLayout";
+      }
+    },
   }
 }
 </script>

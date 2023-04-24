@@ -8,15 +8,24 @@ import TypoGraphy from './views/guide/ui_temp/TypoGraphy.vue';
 const routes = [
   {
     path: "/PubGuides", 
-    component: PubGuides
+    component: PubGuides,
+    meta: {
+      layout: "GuideLayout"
+    }
   },
   {
     path: "/RullGuide", 
-    component: RullGuide
+    component: RullGuide,
+    meta: {
+      layout: "GuideLayout"
+    }
   },    
   {
     path: "/PubList", 
-    component: PubList
+    component: PubList,
+    meta: {
+      layout: "GuideLayout"
+    }
   },
   {
     path: "/tableCmp", 
