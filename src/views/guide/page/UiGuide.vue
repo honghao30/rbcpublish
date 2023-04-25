@@ -1,15 +1,57 @@
 <template>
   <div class="ui-guide__wrap">
+    <div class="ui-guide__subnav--top">
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect01')"
+      >
+        BEM 예시
+      </ButtonCmp>
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect02')"
+      >
+        TypoGraphy
+      </ButtonCmp> 
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect03')"
+      >
+        Table 
+      </ButtonCmp>
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect04')"
+      >
+        버튼 & 아이콘
+      </ButtonCmp>
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect05')"
+      >
+        Form
+      </ButtonCmp>
+    </div>
     <SubTitle pagetitle="UI 템플릿" />
-    <TitleH3 titleh3="BEM 예시" />
-    <TitleH3 titleh3="TypoGraphy" />
-    <TypoGraphy />
-    <TitleH3 titleh3="Table" />
-    <TableGuide />
-    <TitleH3 titleh3="버튼 & 아이콘" />
-    <ButtonGuide />
-    <TitleH3 titleh3="Form" />
-    <FormGuide />
+    <div ref="sect01">
+      <TitleH3 titleh3="BEM 예시" />
+    </div>
+    <div ref="sect02">
+      <TitleH3 ref="sect02" titleh3="TypoGraphy" />    
+      <TypoGraphy />
+    </div>
+    <div ref="sect03">
+      <TitleH3 ref="sect03" titleh3="Table" />
+      <TableGuide />
+    </div>
+    <div ref="sect04">
+      <TitleH3 ref="sect04" titleh3="버튼 & 아이콘" />
+      <ButtonGuide />
+    </div>
+    <div ref="sect05">
+      <TitleH3 ref="sect05" titleh3="Form" />
+      <FormGuide />
+    </div>
   </div>
 </template>
 
@@ -20,6 +62,7 @@ import TypoGraphy from '@/views/guide/ui_temp/TypoGuide.vue'
 import TableGuide from '@/views/guide/ui_temp/tableCmp.vue'
 import ButtonGuide from '@/views/guide/ui_temp/ButtonGuide.vue'
 import FormGuide from '@/views/guide/ui_temp/FormGuide.vue'
+import ButtonCmp from '@/components/common/ButtonCmp.vue'
 
 export default {
     name: 'BasicGuide',
@@ -29,8 +72,18 @@ export default {
         TypoGraphy,
         TableGuide,
         ButtonGuide,
-        FormGuide
-    }
+        FormGuide,
+        ButtonCmp
+    },
+    methods: {
+      goto(refName) {
+        var element = this.$refs[refName];
+        console.log(element);
+        var top = element.offsetTop;
+        
+        window.scrollTo(0, top);
+      }
+  }    
 }
 </script>
 
@@ -41,5 +94,21 @@ export default {
   .wsg-guide-header {
     margin:20px 0;
   }
+}
+.ui-guide__subnav--top {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
 }
 </style>
