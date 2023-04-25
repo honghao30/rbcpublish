@@ -1,0 +1,32 @@
+//
+
+.tab__wrap {
+  .tab-list {
+    display:flex;
+    align-items:center;
+    .tab-item {
+      flex:1;
+      border:1px solid #ccc;
+      border-width:1px 0px 0 1px;
+      background:#fff;
+      &:last-child {
+        border-right-width:1px ;
+      }
+      a {
+        display:block;
+        text-align:center;
+        line-height:36px;
+      }
+      &.active {
+        border-color: $pointColor;
+        + .tab-item {
+          border-left-color:$pointColor
+        }
+        a {
+          color: $pointColor
+        }
+      }
+    }
+
+  }
+}

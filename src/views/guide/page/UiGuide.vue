@@ -31,6 +31,12 @@
       >
         Form
       </ButtonCmp>
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect06')"
+      >
+        Tab
+      </ButtonCmp>      
     </div>
     <SubTitle pagetitle="UI 템플릿" />
     <div ref="sect01">
@@ -52,6 +58,10 @@
       <TitleH3 ref="sect05" titleh3="Form" />
       <FormGuide />
     </div>
+    <div ref="sect06">
+      <TitleH3 titleh3="Tab" />
+      <TabGuide />
+    </div>
   </div>
 </template>
 
@@ -63,6 +73,7 @@ import TableGuide from '@/views/guide/ui_temp/tableCmp.vue'
 import ButtonGuide from '@/views/guide/ui_temp/ButtonGuide.vue'
 import FormGuide from '@/views/guide/ui_temp/FormGuide.vue'
 import ButtonCmp from '@/components/common/ButtonCmp.vue'
+import TabGuide from '@/views/guide/ui_temp/TabGuide.vue'
 
 export default {
     name: 'BasicGuide',
@@ -73,7 +84,8 @@ export default {
         TableGuide,
         ButtonGuide,
         FormGuide,
-        ButtonCmp
+        ButtonCmp,
+        TabGuide
     },
     methods: {
       goto(refName) {
@@ -83,7 +95,7 @@ export default {
         
         window.scrollTo(0, top);
       }
-  }    
+  } 
 }
 </script>
 
