@@ -46,7 +46,7 @@
                         <td style="text-align:center"><span v-if="item.screenId">{{ item.screenId }}</span></td>
                         <td style="text-align:center"><span v-if="item.status">{{ item.status }}</span></td>
                         <td  style="text-align:center"><span v-if="item.date">{{ item.date }}</span></td>
-                        <td><span v-if="item.link"><router-link :to="item.link" target='_blank'>{{item.link}}</router-link></span></td>
+                        <td><span v-if="item.link"><router-link :to="item.link">{{item.link}}</router-link></span></td>
                         <td><span v-if="item.comments">{{ item.comments }}</span></td>
                     </tr>
                 </tbody>
@@ -121,8 +121,8 @@ export default {
         border-width: 2px 2px 0 0; 
         transform: rotate(315deg) translate(-50%, -50%);
     }
-    .collapse { 
-        &::after {
+    &.collapse { 
+        &:after {
             top: 12px; 
             right: 15px; 
             transform: rotate(135deg) translate(-50%, -50%);

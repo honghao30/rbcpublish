@@ -24,7 +24,7 @@
 					<a href="">로그인</a>
 				</li>
 				<li>
-					<router-link to="/page" class="btn__pub" target="_blank">퍼블 리스트 가기</router-link>
+					<router-link to="/PubGuides" class="btn__pub">퍼블 리스트 가기</router-link>
 				</li>
 			</ul>
 		</header>
