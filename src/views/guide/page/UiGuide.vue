@@ -6,6 +6,8 @@
     <TypoGraphy />
     <TitleH3 titleh3="Table" />
     <TableGuide />
+    <TitleH3 titleh3="버튼 & 아이콘" />
+    <ButtonGuide />
   </div>
 </template>
 
@@ -14,6 +16,7 @@ import SubTitle from '@/views/guide/cmp/SubTitle.vue'
 import TitleH3 from '@/views/guide/cmp/TitleH3.vue'
 import TypoGraphy from '@/views/guide/ui_temp/TypoGuide.vue'
 import TableGuide from '@/views/guide/ui_temp/tableCmp.vue'
+import ButtonGuide from '@/views/guide/ui_temp/ButtonGuide.vue'
 
 export default {
     name: 'BasicGuide',
@@ -21,7 +24,8 @@ export default {
         SubTitle,
         TitleH3,
         TypoGraphy,
-        TableGuide
+        TableGuide,
+        ButtonGuide
     }
 }
 </script>
