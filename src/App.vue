@@ -37,4 +37,6 @@ export default {
   @import "./assets/scss/common/_variables.scss";
   @import "./assets/scss/components/ui/table.scss";  
   @import "./assets/scss/components/ui/typography.scss";  
+  @import "./assets/scss/components/ui/form.scss";  
+  @import "element-ui/lib/theme-chalk/index.css";
 </style>
