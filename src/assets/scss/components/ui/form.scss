@@ -20,7 +20,7 @@ $bordersColor: #ccc;
     background-color: #fff;    
     border-radius: 3px;
     border: 1px solid $bordersColor;    
-    color: $inputColor;
+    color: #000;
     display: inline-block;
     font-size: $font-tsize;
     height: $inputHeight;
@@ -164,8 +164,10 @@ $formLabelWidth : 120px;
     display:flex;
     flex-wrap:wrap;
     align-items: center;
+    position: relative;
+    margin-bottom:24px;
     + .form-item {
-      margin-top: 20px;
+      margin-top: 30px;
     }
     &__label {
       flex:0 0 $formLabelWidth;
@@ -182,26 +184,37 @@ $formLabelWidth : 120px;
       }
     }
     &__error {
-      width: 100%;
-      margin-left: $formLabelWidth;
-      // margin-bottom:-24px;
+      margin-bottom:-24px;
       font-size:14px;
       line-height: 24px;
       color:#f56c6c;
+      width:100%;
+      padding-left:$formLabelWidth;;
     }
     
   }
 }
 
 .form-table {
-  .form-item-row {
-    display:flex;
-    flex-wrap:wrap;
-   + .form-item-row {
-    margin-top:10px;
-   }
-
-   .guide-text {width:100%;}
+  .form-item__label {
+    &.required:before {
+      content:'*';
+      color:#f56c6c;
+      position:relative;
+      top:-1px
+    }
+  }
+  .form-item__content {
+    .form-item-row {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      + .form-item-row {
+        margin-top:10px;
+      }
+      .guide-text {width:auto}
+    }
+    .guide-text {width:100%;}
   }
   .input-item {
     width:50%;

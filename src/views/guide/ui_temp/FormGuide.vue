@@ -53,9 +53,9 @@
           <div class="form-item">
             <span class="form-item__label">아이디</span>
             <div class="form-item__content">
-              <input type="text" class="input"/>
+              <input type="text" class="input" v-model="form.id"/>
             </div> 
-            <p class="form-item__error">아이디를 입력해주세요.</p>  
+            <p class="form-item__error" v-if="!idValidation">아이디를 입력해주세요.</p>  
           </div>
           <div class="form-item">
             <span class="form-item__label">휴대폰번호</span>
@@ -63,9 +63,10 @@
               <input type="text" class="input">
               <button class="btn__certi">인증번호 요청</button>
             </div> 
-            <p class="form-item__error">휴대폰번호를 입력해주세요.</p>  
+            <p class="form-item__error" v-if="!idValidation">휴대폰번호를 입력해주세요.</p>  
           </div>
         </div>
+        <button @click="checkValidation">Validation Check</button>
       </div>
       <TitleH3 titleh3="Form List(Table 형)" />
       <div class="wsg-guide-content">
@@ -77,11 +78,35 @@
             </colgroup>
             <tbody>
               <tr>
+                <th scope="row"><span class="form-item__label required">사업자등록번호</span></th>
+                <td>
+                  105-870-78973
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="form-item__label required">사업자등록증</span></th>
+                <td>
+                  <div class="form-item__content">
+                    <div class="form-item-row">
+                      <div class="input-item">
+                        <input type="text" class="input">
+                        <button>파일찾기</button>
+                      </div>
+                      <p class="guide-text">※ 파일형식: JPG, PNG, PDF, TIFF(최대 5MB)</p>
+                    </div>
+                    <p class="guide-text"> ※ 사업자등록증이 없는 경우 사업자등록증명 또는 고유번호증을 등록해주세요. </p>
+                    <p class="guide-text"> ※ 비영리법인/국가기관인 경우 고유번호증을 등록해주세요. </p>
+                  </div> 
+                </td>
+              </tr>
+              <tr>
                 <th scope="row"><span class="form-item__label required">업태</span></th>
                 <td>
-                  <div class="form-item-row">
-                    <div class="input-item">   
-                      <input type="text" class="input">
+                  <div class="form-item__content">
+                    <div class="form-item-row">
+                      <div class="input-item">   
+                        <input type="text" class="input">
+                      </div>
                     </div>
                     <p class="guide-text">※ 비영리법인/국가기관인 경우 ‘기업/단체’로 입력해주세요.</p>
                   </div>
@@ -90,7 +115,7 @@
               <tr>
                 <th scope="row">주소</th>
                 <td>
-                  <div class="form-item">
+                  <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item">
                         <input type="text" class="input">
@@ -105,14 +130,13 @@
                         <input type="text" class="input">
                       </div>
                     </div>
-                    
                   </div> 
-
                 </td>
               </tr>                      
             </tbody>
           </table>
-        </div>     
+        </div> 
+             
       </div>       
   </div>
 </template>
@@ -128,12 +152,19 @@ export default {
         date: '',
         check: '',
         radio: 1,
-        radioGroup: 3
-      }
+        radioGroup: 3,
+        id: ''
+      },
+      idValidation: true,
     }
   },
   components: {
     TitleH3
+  },
+  methods: {
+    checkValidation() {
+      this.idValidation = false
+    }
   }
 
 }

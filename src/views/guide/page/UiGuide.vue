@@ -8,6 +8,8 @@
     <TableGuide />
     <TitleH3 titleh3="Form" />
     <FormGuide />
+    <TitleH3 titleh3="Tab" />
+    <TabGuide />
   </div>
 </template>
 
@@ -17,6 +19,7 @@ import TitleH3 from '@/views/guide/cmp/TitleH3.vue'
 import TypoGraphy from '@/views/guide/ui_temp/TypoGuide.vue'
 import TableGuide from '@/views/guide/ui_temp/tableCmp.vue'
 import FormGuide from '@/views/guide/ui_temp/FormGuide.vue'
+import TabGuide from '@/views/guide/ui_temp/TabGuide.vue'
 
 export default {
     name: 'BasicGuide',
@@ -25,7 +28,8 @@ export default {
         TitleH3,
         TypoGraphy,
         TableGuide,
-        FormGuide
+        FormGuide,
+        TabGuide
     }
 }
 </script>
