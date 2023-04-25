@@ -1,19 +1,13 @@
 <template>
-  <div class="wrap">
-    <HeaderCmp />    
-    <BasicSummary /> 
-  </div>
+   <BasicSummary /> 
 </template>
 
 <script>
-
-import HeaderCmp from './cmp/Header.vue'
 import BasicSummary from './cmp/BasicSummary.vue'
 
 export default {
     name: 'PubGuides',
-    components: {
-        HeaderCmp,
+    components: {        
         BasicSummary
     },
     metaInfo: {

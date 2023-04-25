@@ -1,13 +1,17 @@
 <template>
-  <div class="wrap">
-    <p>가이드 레이아웃(멀티 레이아웃 작업중)</p>
+  <div class="wrap">    
+    <HeaderCmp />
     <router-view />
   </div>
 </template>
 
 <script>
+import HeaderCmp from '@/views/guide/cmp/Header.vue'
 export default {
     name: 'GuideLayout',
+    components: {
+        HeaderCmp      
+    }
 }
 </script>
 

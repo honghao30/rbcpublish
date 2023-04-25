@@ -22,9 +22,17 @@
                 to="/RullGuide" 
                 class="btn__pub"
             >
-                규칙 & 설계 가이드
+                규칙 & 설계
               </router-link>
-        </li>	
+        </li>
+        <li>
+            <router-link 
+                to="/UiGuides" 
+                class="btn__pub"
+            >
+                UI 가이드
+              </router-link>
+        </li>        	
         <li>
               <router-link
                 to="/PubList"

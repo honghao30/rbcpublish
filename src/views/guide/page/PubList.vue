@@ -1,19 +1,13 @@
 <template>
-  <div class="wrap">
-    <HeaderCmp />      
-    <WorkList />   
-  </div>
+    <WorkList />  
 </template>
 
 <script>
-
-import HeaderCmp from '../cmp/Header.vue'
 import WorkList from '../cmp/WorkList.vue'
 
 export default {
     name: 'PubGuides',
-    components: {
-        HeaderCmp,
+    components: {        
         WorkList     
     },
     metaInfo: {

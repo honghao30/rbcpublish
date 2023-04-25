@@ -1,6 +1,5 @@
 <template>
   <div class="tmep__wrap">
-      <SubTitle pagetitle="TypoGraphy 가이드"/>
       <div class="wsg-guide-content">
         <div class="wsg-note__wrap--gray-box">
           <ul class="wsg_desc">
@@ -36,12 +35,10 @@
 </template>
 
 <script>
-import SubTitle from '../cmp/SubTitle.vue'
 import TitleH3 from '../cmp/TitleH3.vue'
 
 export default {
   components: {
-    SubTitle,
     TitleH3
   }
 

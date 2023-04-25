@@ -1,19 +1,13 @@
 <template>
-  <div class="wrap">
-    <HeaderCmp /> 
-    <PubRull />        
-  </div>
+  <PubRull /> 
 </template>
 
 <script>
-
-import HeaderCmp from '../cmp/Header.vue'
 import PubRull from '../cmp/PubRull.vue'
 
 export default {
     name: 'PubGuides',
-    components: {
-        HeaderCmp,
+    components: {        
         PubRull
     },
     metaInfo: {

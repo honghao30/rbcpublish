@@ -1,9 +1,7 @@
 import PubGuides from './views/guide';
 import RullGuide from './views/guide/page/RullGuide';
 import PubList from './views/guide/page/PubList';
-
-import tableCmp from './views/guide/ui_temp/tableCmp.vue';
-import TypoGraphy from './views/guide/ui_temp/TypoGraphy.vue';
+import UiGuides from './views/guide/page/UiGuide';
 
 const routes = [
   {
@@ -28,14 +26,12 @@ const routes = [
     }
   },
   {
-    path: "/tableCmp", 
-    component: tableCmp
-  },
-  {
-    path: "/Typography", 
-    component: TypoGraphy
+    path: "/UiGuides", 
+    component: UiGuides,
+    meta: {
+      layout: "GuideLayout"
+    }
   }
-
 ];
 
 
