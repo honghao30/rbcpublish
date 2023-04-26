@@ -9,40 +9,33 @@
       </div>
       <TitleH3 titleh3="Tab" />
       <div class="wsg-guide-content">
-        <div class="tab__wrap">
-          <ul class="tab-list">
-            <li v-for="(item, i) in loginTab" :key=i class="tab-item" :class="[{active: currentTab === i}]">
-                <a role="button" 
-                    @click="tabCtrl(i)" 
-                    :tabindex="[currentTab === i ? 0 : -1]"
-                    >
-                    {{ item }}
-                </a>
-            </li>
-          </ul>
-          <div class="tab-contents" v-if="currentTab == 0">
-              tab1 내용
-          </div>
-          <div class="tab-contents" v-if="currentTab == 1">
-              tab2 내용
-          </div>
-        </div>      
+        <TabCmp>
+          <TabItem title="Tab1">
+            <div>Tab1 내용</div>
+          </TabItem>
+          <TabItem title="Tab2">
+            <div>Tab2 내용</div>
+          </TabItem>
+        </TabCmp>
       </div>        
   </div>
 </template>
 
 <script>
 import TitleH3 from '../cmp/TitleH3.vue'
+import TabCmp from '../../../components/common/TabCmp.vue'
+import TabItem from '../../../components/common/TabItem.vue'
 
 export default {
   data() {
     return {
       currentTab : 0,
-      loginTab: ['아이디 찾기', '비밀번호 찾기']
     }
   },
   components: {
-    TitleH3
+    TitleH3,
+    TabCmp,
+    TabItem
   },
   methods: {
     tabCtrl: function(num) {

@@ -16,6 +16,7 @@
         display:block;
         text-align:center;
         line-height:36px;
+        cursor:pointer;
       }
       &.active {
         border-color: $pointColor;
