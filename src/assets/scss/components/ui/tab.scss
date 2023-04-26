@@ -28,6 +28,13 @@
         }
       }
     }
-
+    &.fixed {
+      .tab-item {
+        flex:none;
+      }
+    }
+    &.scroll {
+      overflow-x: scroll;
+    }
   }
 }

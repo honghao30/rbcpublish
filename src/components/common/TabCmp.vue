@@ -1,11 +1,16 @@
 <template>
   <div class="tab__wrap">
-    <ul class="tab-list" role="tablist">
+    <ul 
+      class="tab-list" 
+      role="tablist"
+      :class="[{scroll: tabs.length > 10}, {fixed: tabWidth}]"
+    >
       <li 
         v-for="(tab, i) in tabs" 
         :key=i  
         class="tab-item"
         :class="[{active: activeTabIndex === i}]"
+        :style="{ width: tabWidth + 'px' }"
       >
         <a role="tab" 
           @click="tabCtrl(i)"
@@ -23,7 +28,7 @@
 <script>
 export default {
   props: {
-      
+    tabWidth: Number
   },
   data() {
     return {
@@ -36,6 +41,7 @@ export default {
   },
   mounted() {
     this.tabs[0].isActive = true
+    console.log(this.tabWidth)
   },
   methods: {
     tabCtrl: function(num) {
