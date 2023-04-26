@@ -3,7 +3,6 @@ import RullGuide from './views/guide/page/RullGuide';
 import PubList from './views/guide/page/PubList';
 import UiGuides from './views/guide/page/UiGuide';
 
-
 const routes = [
   {
     path: "/PubGuides", 
@@ -32,7 +31,7 @@ const routes = [
     meta: {
       layout: "GuideLayout"
     }
-  } 
+  }
 ];
 
 

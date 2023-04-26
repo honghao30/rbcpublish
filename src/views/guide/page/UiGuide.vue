@@ -36,11 +36,18 @@
         @click="goto('sect06')"
       >
         Tab
-      </ButtonCmp>      
+      </ButtonCmp>     
+      <ButtonCmp
+        type="blue"
+        @click="goto('sect07')"
+      >
+        modal
+      </ButtonCmp>         
     </div>
     <SubTitle pagetitle="UI 템플릿" />
     <div ref="sect01">
       <TitleH3 titleh3="BEM 예시" />
+      <BemGuide />
     </div>
     <div ref="sect02">
       <TitleH3 ref="sect02" titleh3="TypoGraphy" />    
@@ -62,13 +69,19 @@
       <TitleH3 titleh3="Tab" />
       <TabGuide />
     </div>
+    <div ref="sect07">
+      <TitleH3 titleh3="Modal" />
+      <ModalGuide />
+    </div>    
   </div>
 </template>
 
 <script>
 import SubTitle from '@/views/guide/cmp/SubTitle.vue'
 import TitleH3 from '@/views/guide/cmp/TitleH3.vue'
+import BemGuide from '@/views/guide/ui_temp/BemGuide.vue'
 import TypoGraphy from '@/views/guide/ui_temp/TypoGuide.vue'
+import ModalGuide from '@/views/guide/ui_temp/ModalGuide.vue'
 import TableGuide from '@/views/guide/ui_temp/tableCmp.vue'
 import ButtonGuide from '@/views/guide/ui_temp/ButtonGuide.vue'
 import FormGuide from '@/views/guide/ui_temp/FormGuide.vue'
@@ -80,11 +93,13 @@ export default {
     components: {
         SubTitle,
         TitleH3,
+        BemGuide,
         TypoGraphy,
         TableGuide,
         ButtonGuide,
         FormGuide,
         ButtonCmp,
+        ModalGuide,
         TabGuide
     },
     methods: {

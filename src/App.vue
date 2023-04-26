@@ -39,6 +39,7 @@ export default {
   @import "./assets/scss/components/ui/typography.scss";  
   @import "./assets/scss/components/ui/button.scss";  
   @import "./assets/scss/components/ui/form.scss";  
+  @import "./assets/scss/components/ui/modal.scss";
   @import "./assets/scss/components/ui/tab.scss";  
   @import "element-ui/lib/theme-chalk/index.css";
 </style>

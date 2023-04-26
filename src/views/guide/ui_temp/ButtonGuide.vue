@@ -43,8 +43,8 @@
       <div class="wsg-guide-content">
         <div class="wsg-note__wrap--gray-box">
           <ul class="wsg_desc">
-            <li>아이콘이 포함된 버튼일 경우 icondrection="" 아이콘의 뒤치를 지정한다. 예: top, left</li>          
-            <li>iconname="" 에 아이콘명을 정의한다. 없을 경우 생략 한다. </li>          
+            <li>아이콘이 포함된 버튼일 경우 icondrection="" 아이콘의 위치를 지정한다. 예: top, left</li>          
+            <li>iconname=""  아이콘명을 정의한다. 없을 경우 생략 한다. </li>          
           </ul>
         </div>
       </div>         
