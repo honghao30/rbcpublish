@@ -6,7 +6,7 @@ $radius: 8px;
   display: inline-grid;
   justify-content: center;
   align-items: center;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   line-height: normal;
   max-width: 100%;  
   border-radius: $radius;  
@@ -17,7 +17,7 @@ $radius: 8px;
   border: none;
   padding:0 20px;
 }
-@mixin btntype($btnFontSize,$btnBorder,$btnColor,$btnHoverColor,$btnHoverColor,$radius) {  
+@mixin btntype($btnFontSize,$btnBorder,$btnColor,$btnFontColor,$radius, $btnHoverColor) {  
   font-size: $btnFontSize;
   border: $btnBorder;
   color: $btnColor;
@@ -46,6 +46,7 @@ $radius: 8px;
 }
 .btn {
   @include btnCommon;  
+   
   &.search {
     color:#fff;
     background-color:#717883

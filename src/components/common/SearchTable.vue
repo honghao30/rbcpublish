@@ -7,7 +7,9 @@
         <option value="3">선택 3</option>
       </select>
     </div>
-    <input type="text"  class="input">
+    <div class="input">
+      <input type="text" placeholder="검색어를 입력해 주세요.">
+    </div>
     <ButtonCmp
       type="search"
     >
