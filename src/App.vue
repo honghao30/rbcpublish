@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      layout: null,
+      layout: DefaultLayout,
     };
   },
   watch: {
@@ -41,5 +41,7 @@ export default {
   @import "./assets/scss/components/ui/form.scss";  
   @import "./assets/scss/components/ui/modal.scss";
   @import "./assets/scss/components/ui/tab.scss";  
+  @import "./assets/scss/views/layout.scss";
+  @import "./assets/scss/views/customer.scss";
   @import "element-ui/lib/theme-chalk/index.css";
 </style>

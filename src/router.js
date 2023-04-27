@@ -2,6 +2,7 @@ import PubGuides from './views/guide';
 import RullGuide from './views/guide/page/RullGuide';
 import PubList from './views/guide/page/PubList';
 import UiGuides from './views/guide/page/UiGuide';
+import NoticeView from './views/publish/customer/Notice';
 
 const routes = [
   {
@@ -31,6 +32,10 @@ const routes = [
     meta: {
       layout: "GuideLayout"
     }
+  },
+  {
+    path: "/", 
+    component: NoticeView,
   }
 ];
 

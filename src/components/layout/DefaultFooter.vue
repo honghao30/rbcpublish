@@ -1,18 +1,19 @@
 <template>
-    <div class="footer__wrap">
-        <footer class="footer">
-            <ul>
+    <footer class="footer">
+        <div class="inner">
+            <ul class="policy-list">
+                <li><a href="">관련 사이트</a></li>
+                <li><a href="">개인정보 처리방침</a></li>
                 <li><a href="">이용약관</a></li>
-                <li><a href="">온라인문의</a></li>
-                <li><a href="">대행사가입</a></li>
             </ul>
-            <ul>
-                <li><a href=""><span class="blind"></span>SK</a></li>
-                <li><a href=""><span class="blind"></span>KT</a></li>
-                <li><a href=""><span class="blind"></span>LG U+</a></li>
+            <ul class="agency-list">
+                <li class="tworld"><a href=""><span class="blind">SK</span></a></li>
+                <li class="kt"><a href=""><span class="blind">KT</span></a></li>
+                <li class="uplus"><a href=""><span class="blind">LG U+</span></a></li>
             </ul>
-        </footer>
-    </div>
+            <p class="copyright">© RCS Biz Center</p>  
+        </div>
+    </footer>
 </template>
 
 <script>

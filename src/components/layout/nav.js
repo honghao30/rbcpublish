@@ -49,6 +49,10 @@ const navMenu =  [
             }
         ]
     },
+    {
+        title: '기술지원',
+        to: '/tech-support',
+    },
 ]
 
 export default navMenu;

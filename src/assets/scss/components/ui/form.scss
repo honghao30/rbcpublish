@@ -1,9 +1,8 @@
 //폼 공통요소
-$inputHeight: 32px;
+$inputHeight: 42px;
 $font-tsize: 16px;
 $inputColor: #fafafa;
-$pointColor: #2583F0;
-$bordersColor: #ccc;
+$bordersColor: #DDDDDD;
 
 @mixin hiddens {
   position: absolute;
@@ -18,14 +17,14 @@ $bordersColor: #ccc;
 
 @mixin inputBasic {  
     background-color: #fff;    
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1px solid $bordersColor;    
     color: #000;
     display: inline-block;
     font-size: $font-tsize;
     height: $inputHeight;
     line-height: $inputHeight;    
-    padding: 0 15px;    
+    padding: 0 16px;    
     width: 100%;
 }
 
@@ -131,15 +130,18 @@ $bordersColor: #ccc;
   display:inline-block;
 
   select {
-    width: 180px;
+    width: 100%;
     height: $inputHeight;
     -moz-appearance:none; 
     -webkit-appearance:none; 
     appearance:none;
-    border:1px solid #ccc;
+    border:1px solid $bordersColor;
     padding:0 12px;
     color: #666;
-    outline:none
+    border-radius: 8px;
+    padding:8px 40px 8px 16px;
+    outline:none;
+    color:#000;
   }
   select::-ms-expand {
     display:none;
@@ -148,12 +150,13 @@ $bordersColor: #ccc;
     content:'';
     display:inline-block;
     position: absolute;
-    right:15px;
-    top:10px;
+    right:20px;
+    top:50%;
     width: 8px; 
     height: 8px; 
+    margin-top: -6px;
     border: 1px solid #888; 
-    border-width: 1px 1px 0 0; 
+    border-width: 2px 2px 0 0; 
     transform: rotate(135deg) translate(-50%, -50%);
   }
 }

@@ -1,0 +1,47 @@
+.category-tab {
+    margin-bottom: 32px;
+    ul {
+        display:flex;
+        align-items:center;
+        background-color:#F9F9F9;
+        border-radius:8px;
+        li {
+            flex: 1;
+            border-radius:8px;
+            border:1px solid transparent;
+            &.active {
+               background-color:#DCF2FF;
+               border-color:#ADE2FF
+            }
+        }
+        a {
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            cursor:pointer;
+            height:56px;
+            font-size:16px;
+            font-weight: 500;
+            span {
+                line-height: 20px;
+            }
+        }
+    }
+}
+.search-table {
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom: 16px;
+    .select {
+      width: 120px;
+    }
+    .input {
+      width: 240px;
+      margin-left:8px;
+    }
+    .btn {
+      width: 74px;
+      margin-left: 8px;
+    }
+  
+  }

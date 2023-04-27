@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">    
+  <div class="wrap guide">    
     <HeaderCmp />
     <router-view />
   </div>
