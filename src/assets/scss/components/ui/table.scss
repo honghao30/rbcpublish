@@ -3,39 +3,43 @@
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #ccc;
   th,
   td {
     padding: 8px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #F0F0F0;
   }
   th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-  }
-  tr:nth-child(even) {
-    background-color: #f8f8f8;
-  }
-  tr:nth-child(odd) {
-    background-color: #f8f8f8;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    border-color:#ddd;
+    padding: 16px 0;
   }
   td {
     background-color: #fff;
-    .type-center {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px 0;
+    .c-align {
       text-align: center;
+    }
+    .l-align {
+      text-align:left;
+    }
+    span {
+      display:block;
+    }
+    .date {
+      color: #888;
     }
   }
 }
 
 @mixin tableListType () {
+  border-top: 2px solid $pointColor;
   @include tableCommon;
-  tr {
-    &:first-child {
-      border-left: 0;
-    }
-    &:last-child {
-      border-right: 0;
-    }
+  th, td {
+    text-align:center
   }
 }
 
