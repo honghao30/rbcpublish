@@ -26,10 +26,15 @@ $bordersColor: #DDDDDD;
     line-height: $inputHeight;    
     padding: 0 16px;    
     width: 100%;
+    &::placeholder {
+      color: #999
+    }
 }
 
 .input {
-  @include inputBasic;
+  input {
+    @include inputBasic;
+  }
 }
 //check box
 //input 은 숨겨주기
@@ -238,6 +243,87 @@ $formLabelWidth : 120px;
       margin-left:10px;
     }
   }
-  
+}
+
+.search-table {
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom: 16px;
+  .select {
+    width: 120px;
+    select {
+      font-size: 16px;
+    }
+    
+  }
+  .input {
+    width: 240px;
+    margin-left:8px;
+    font-size: 16px;
+  }
+  .btn {
+    width: 74px;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width:  $mobileDeviceWidth) {
+  $inputHeight: 45px;
+  @mixin inputBasicM {  
+    background-color: #fff;    
+    border-radius: 8px;
+    border: 1px solid $bordersColor;    
+    display: inline-block;
+    font-size: 14px;
+    height: $inputHeight;
+    line-height: $inputHeight;    
+    padding: 0 12px;    
+    width: 100%;
+    &::placeholder {
+      color: #999
+    }
+  }
+
+  .input {
+    input {
+      @include inputBasicM;
+    }
+  }
+
+  .select {
+    select {
+      height: $inputHeight;
+      color: #000;
+      border-radius: 8px;
+      padding:12px 28px 12px 10px;
+    }
+    &::after {
+      content:'';
+      display:inline-block;
+      position: absolute;
+      right:18px;
+    }
+  }
+  .search-table {
+    margin-bottom: 24px;
+    .select {
+      width: 80px;
+      flex-shrink: 0;
+      select {
+        font-size: 14px;
+      }
+    }
+    .input {
+      width: auto;
+      margin: 0 8px;
+      font-size: 14px;
+      flex: auto
+    }
+    .btn {
+      flex-shrink: 0;
+      width: 74px;
+      margin-left: 0;
+    }
+  }
 
 }
