@@ -43,5 +43,7 @@ export default {
   @import "./assets/scss/components/ui/tab.scss";  
   @import "./assets/scss/views/layout.scss";
   @import "./assets/scss/views/customer.scss";
+  @import "./assets/scss/views/login.scss";
+  @import "./assets/scss/views/join.scss";
   @import "element-ui/lib/theme-chalk/index.css";
 </style>

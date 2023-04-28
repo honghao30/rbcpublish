@@ -1,4 +1,14 @@
 // 전역으로 사용되는 mixin 등 전역 변수 정의
+//반응형
+$phone: "only screen and (max-width : 769px)";
+$phone480: "only screen and (max-width : 480px)";
+$phone360: "only screen and (max-width : 360px)";
+$phonemini: "only screen and (max-width : 320px)";
+$notebook: "screen and (max-width : 1366px)";
+$tablet: "screen and (max-width : 1024px)";
+$desktop: "screen and (min-width : 769px)";
+$desktop1025: "screen and (min-width : 1025px)";
+
 //폰트 
 @mixin fontoption($font-tsize, $font-color, $font-weight) {
     font-family: $font-family;

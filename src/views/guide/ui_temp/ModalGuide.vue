@@ -19,7 +19,7 @@
           모달1
         </ButtonCmp>  
         <ModalView
-          v-if="isModalViewed" @close-modal="isModalViewed = false"
+          v-if="isModalViewed" @closeModal="isModalViewed = false"
         >
           <ModalCont1 />
         </ModalView>  

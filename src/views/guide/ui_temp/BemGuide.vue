@@ -8,6 +8,7 @@
             <li>요소(Element): 구성 요소 안쪽에는 하나 또는 그 이상의 요소가 있을 수 있다.</li>
             <li>변경자(Modifier): 블록 또는 요소는 변경자를 이용하여 변형을 표시할 수 있다.</li>
             <li><a href="https://webclub.tistory.com/263" target="_blank">https://webclub.tistory.com/263</a> 참고 </li>
+            <li><a href="https://www.aemcomponents.dev/content/core-components-examples/library.html" target="_blank">어도비 AEM 라이브러리</a> 참고 </li>
           </ul>
         </div>
       </div>
@@ -15,8 +16,8 @@
       <div class="wsg-guide-content">
         <div class="wsg-note__wrap--gray-box">
          .list__wrap<br>
-           .list__item<br>
-             .list__item--title          
+           .list-item<br>
+             .list-item__title--top
         </div>
       </div>             
   </div>
