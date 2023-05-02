@@ -20,7 +20,10 @@
             @include fontoption(18px,#666666,500,28px);
             width: calc(100% / 4 );
             display: flex;
-            justify-content: center;            
+            justify-content: center; 
+            span {
+                white-space: nowrap;
+            }           
             .join-step__inner {
                 position: relative;
                 width: 120px; 
