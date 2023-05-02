@@ -152,7 +152,8 @@
                     <dl class="isSelect">
                       <dt>
                         <!-- 체크박스가 아닌 라디오 박스가 맞는거 아닌지 기획 확인필요
-                        두개 동시에 체크 되는 경우는 없으니 -->
+                        두개 동시에 체크 되는 경우는 없으니
+                        기획서는 선택 된 권한 활성화 형태인데 디자인은 체크박스로 되어 있으니 정식으로 디자인 받은 후 확인 필요 -->
                         <span class="checkbox">
                           <input type="checkbox"  v-model="selecteAuth" id="Auth_1" value="Auth_1"  />
                           <label for="Auth_1"><span class="checkbox__text">마스터 권한</span></label>

@@ -68,6 +68,7 @@
                     </div>                                     
                 </td>
               </tr>
+              <!-- 휴대폰 인증 이후 인증번호 입력 폼이 필요할듯 한데.. 확인 필요 -->
               <tr>
                 <th scope="row"><span class="form-item__label required">아이디</span></th>
                 <td colspan="3">
