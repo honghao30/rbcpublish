@@ -44,7 +44,11 @@ $radius: 8px;
 .button__wrap {
   position: relative;
   padding:20px 0 50px;
+  &:last-child {
+    padding-bottom:0;
+  }
 }
+
 .btn {
   @include btnCommon;  
    

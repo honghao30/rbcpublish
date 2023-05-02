@@ -1,31 +1,8 @@
 <template>
   <div class="join">
     <PageTitle pagetitle="기업담당자 회원가입" />  
-    <div class="join-step__wrap">
-        <ol>
-            <li class="step-end">
-                <div class="join-step__inner">
-                    <span>약관동의</span>
-                </div>
-            </li>
-            <li class="step-end">
-                <div class="join-step__inner">
-                    <span>기업정보 입력</span>
-                </div>
-            </li>
-            <li class="step-ing">
-                <div class="join-step__inner">
-                    <span>회원정보 입력</span>
-                </div>                                
-            </li> 
-            <li>
-                <div class="join-step__inner">
-                    <span>가입완료</span>
-                </div>                                
-            </li>                          
-        </ol>
-    </div>
-    <PageTitleH3 titleh3="기업정보 입력" noticeinfo="필수 입력값" />
+    <JoinStep :step="3"/>
+    <PageTitleH3 titleh3="회원정보 입력" noticeinfo="필수 입력값" />
     <form  ref="form" :model="form">
         <div class="table__wrap">
           <table class="table table-bodyonly form-table">
@@ -182,13 +159,15 @@ import PageTitleH3 from '@/components/common/PageTitleH3.vue';
 import ButtonCmp from '@/components/common/ButtonCmp.vue'
 import ModalView from '@/components/common/ModalView.vue';
 import CertificateMsg from '@/views/publish/join/CertificateMsg.vue';
+import JoinStep from '@/views/publish/join/JoinStep';
   export default {
     components: {
       PageTitle,
       ButtonCmp,
       PageTitleH3,
       ModalView,
-      CertificateMsg 
+      CertificateMsg,
+      JoinStep 
     },
     data() {
       return {

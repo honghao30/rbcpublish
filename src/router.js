@@ -9,8 +9,10 @@ import NoticeView from './views/publish/customer/Notice';
 import LoginPage from './views/publish/join/LoginPage';
 import IdFind from './views/publish/join/IdFind';
 import pwFind from './views/publish/join/pwFind';
-import joinStep02 from './views/publish/join/joinStep02';
-import joinStep03 from './views/publish/join/joinStep03';
+import JoinStep01 from './views/publish/join/JoinStep01';
+import JoinStep02 from './views/publish/join/JoinStep02';
+import JoinStep03 from './views/publish/join/JoinStep03';
+import JoinStep04 from './views/publish/join/JoinStep04';
 
 Vue.use(VueRouter);
 
@@ -73,15 +75,29 @@ const route = [
     }    
   },
   {
+    path: "/joinStep01", 
+    component: JoinStep01,
+    meta: {      
+      tittle: '약관동의'
+    }    
+  }, 
+  {
     path: "/joinStep02", 
-    component: joinStep02,
+    component: JoinStep02,
     meta: {      
       tittle: '회원가입'
     }    
   }, 
   {
     path: "/joinStep03", 
-    component: joinStep03,
+    component: JoinStep03,
+    meta: {      
+      tittle: '회원가입'
+    }    
+  }, 
+  {
+    path: "/joinStep04", 
+    component: JoinStep04,
     meta: {      
       tittle: '회원가입'
     }    
@@ -92,7 +108,7 @@ const route = [
     meta: {      
       tittle: '공지사항'
     }    
-  }
+  },
 ];
 
 // Vue 라우터 인스턴스 생성

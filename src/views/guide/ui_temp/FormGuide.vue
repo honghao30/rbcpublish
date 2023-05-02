@@ -169,16 +169,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss">
-.text {
-    font-size:16px;
-    max-width: 50%;
-    margin:20px 0;
-  }
-  .long-text {
-    font-size:16px;
-    max-width: 40%;
-    margin:20px 0;
-  }
-</style>

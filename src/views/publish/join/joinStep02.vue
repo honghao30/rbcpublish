@@ -1,30 +1,7 @@
 <template>
   <div class="join">
     <PageTitle pagetitle="기업담당자 회원가입" />  
-    <div class="join-step__wrap">
-        <ol>
-            <li class="step-end">
-                <div class="join-step__inner">
-                    <span>약관동의</span>
-                </div>
-            </li>
-            <li class="step-ing">
-                <div class="join-step__inner">
-                    <span>기업정보 입력</span>
-                </div>
-            </li>
-            <li>
-                <div class="join-step__inner">
-                    <span>회원정보 입력</span>
-                </div>                                
-            </li> 
-            <li>
-                <div class="join-step__inner">
-                    <span>가입완료</span>
-                </div>                                
-            </li>                          
-        </ol>
-    </div>
+    <JoinStep :step="2"/>
     <PageTitleH3 titleh3="기업정보 입력" noticeinfo="필수 입력값" />
     <form  ref="form" :model="form">
         <div class="table__wrap">
@@ -171,7 +148,7 @@
                     <dl>
                       <dt>
                         <span class="checkbox">
-                          <input type="checkbox"   v-model="selecteAuth" id="Auth_2" value="Auth_2" />
+                          <input type="checkbox" v-model="selecteAuth" id="Auth_2" value="Auth_2" />
                           <label for="Auth_2"><span class="checkbox__text">매니저 권한</span></label>
                         </span>
                       </dt>
@@ -214,25 +191,28 @@ import PageTitleH3 from '@/components/common/PageTitleH3.vue';
 import ButtonCmp from '@/components/common/ButtonCmp.vue'
 import ModalView from '@/components/common/ModalView.vue';
 import CertificateMsg from '@/views/publish/join/CertificateMsg.vue';
+import JoinStep from '@/views/publish/join/JoinStep';
+
   export default {
     components: {
-      PageTitle,
-      ButtonCmp,
-      PageTitleH3,
-      ModalView,
-      CertificateMsg 
+		PageTitle,
+		ButtonCmp,
+		PageTitleH3,
+		ModalView,
+		CertificateMsg,
+		JoinStep 
     },
     data() {
       return {
         form: {
-          certificate: '',
-          certificateFile: '',
-          companyname: '',
-          biztype: '',
-          bizevent: '',
-          postcode: '',
-          addr1: '',
-          addr2: ''         
+			certificate: '',
+			certificateFile: '',
+			companyname: '',
+			biztype: '',
+			bizevent: '',
+			postcode: '',
+			addr1: '',
+			addr2: '',     
         },   
         selecteAuth: ['Auth_1'],
         certificateErrorMsg: false,
@@ -288,7 +268,6 @@ import CertificateMsg from '@/views/publish/join/CertificateMsg.vue';
         this.files = files;
         const filesName = files[0].name;
         this.filesName = filesName;
-        console.log(files,filesName)
       },
       findPost () {
         alert('우편번호 잦기')
