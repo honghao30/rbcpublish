@@ -1,12 +1,12 @@
 .category-tab, 
 .tab__wrap {
   margin-bottom: 32px;
-  	.tab-list {
+  	ul {
       display:flex;
       align-items:center;
       background-color:#F9F9F9;
       border-radius:8px;
-      	.tab-item  {
+      	li  {
 			flex: 1;
 			border-radius:8px;
 			border:1px solid transparent;
