@@ -111,7 +111,7 @@
   }
 }
 
-@media (max-width:  $mobileDeviceWidth) {
+@media (max-width: $mobileBreakPoint) {
   @mixin tableCommon {
     td {
       font-size: 14px;

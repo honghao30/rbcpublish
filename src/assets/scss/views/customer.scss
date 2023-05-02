@@ -38,7 +38,7 @@
     } 
 }
 
-@media (max-width:  $mobileDeviceWidth) {
+@media (max-width:  $mobileBreakPoint) {
     .category-tab {
         margin-bottom: 24px;
         ul {

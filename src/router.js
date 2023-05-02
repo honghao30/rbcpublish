@@ -14,6 +14,7 @@ import JoinStep02 from './views/publish/join/JoinStep02';
 import JoinStep03 from './views/publish/join/JoinStep03';
 import JoinStep04 from './views/publish/join/JoinStep04';
 import AgencyJoinStep01 from './views/publish/join/AgencyJoinStep01';
+import AgencyJoinStep04 from './views/publish/join/AgencyJoinStep04';
 Vue.use(VueRouter);
 
 const route = [
@@ -108,7 +109,14 @@ const route = [
     meta: {      
       tittle: '약관동의'
     }    
-  },   
+  }, 
+  {
+    path: "/agencyjoinStep04", 
+    component: AgencyJoinStep04,
+    meta: {      
+      tittle: '회원가입'
+    }    
+  },    
   {
     path: "/notice", 
     component: NoticeView,

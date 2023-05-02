@@ -270,7 +270,7 @@ $contentPaddingM: 16px;
 
 // 모바일 
 
-@media (max-width:  $mobileDeviceWidth) {
+@media (max-width:  $mobileBreakPoint) {
 
     $headerHeight: 48px;
     .inner { 
