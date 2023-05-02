@@ -12,7 +12,7 @@
         </li>
       </ul>
     </div>
-    <SearchTable />
+    <SearchTable v-if="checkBoardLength" />
     <div class="table__wrap notice-table">
         <table class="table table-list">
           <colgroup>
@@ -99,14 +99,67 @@ export default {
             primary: false,
             new: true,
             attach: true
-          }
-        ] 
+          },
+          {
+            id: 5,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          },
+          {
+            id: 6,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          },
+          {
+            id: 7,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          },
+          {
+            id: 8,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          },
+          {
+            id: 9,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          },
+          {
+            id: 10,
+            title: "RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정 RCS Biz Center 제3회 전국동시조합장선거 후보자 브랜드 등록 수정s",
+            date: '2023.04.23',
+            primary: false,
+            new: false,
+            attach: false
+          }               
+        ]              
       }
     },  
     components: {
       PageTitle,
       SearchTable,
       PagingCmp
+    },
+    computed: {
+      checkBoardLength() {
+        return this.noticeData.length < 10 ?  false: true;
+      }
     },
     methods: {
       tabCtrl: function(num) {
