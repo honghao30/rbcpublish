@@ -26,14 +26,14 @@
           <div class="form-item">
             <span class="form-item__label">아이디</span>
             <div class="form-item__content">
-              <input type="text" class="input" placeholder="아이디를 입력해주세요." v-model="form.id">            
+              <span class="input"><input type="text" class="input" placeholder="아이디를 입력해주세요." v-model="form.id"></span>
             </div>         
             <p class="form-item__error" v-if="idErrorMsg">아이디를 입력해주세요.</p> 
           </div>       
           <div class="form-item">
             <span class="form-item__label">이름</span>
             <div class="form-item__content">
-              <input type="text" class="input" placeholder="이름을 입력해주세요."  v-model="form.name">                   
+              <span class="input"><input type="text" class="input" placeholder="이름을 입력해주세요."  v-model="form.name"></span>
                        
             </div>         
             <p class="form-item__error" v-if="nameErrorMsg">이름을 입력해주세요.</p>        
@@ -41,7 +41,7 @@
           <div class="form-item">
             <span class="form-item__label">휴대폰</span>
             <div class="form-item__content">
-              <input type="text" class="input" placeholder="‘-’없이 숫자만 입력해주세요."  v-model="form.phone">                   
+              <span class="input"><input type="text" class="input" placeholder="‘-’없이 숫자만 입력해주세요."  v-model="form.phone"></span>
               <ButtonCmp
                 type="btn-default-line"
                 @click="start"
@@ -54,7 +54,7 @@
           <div class="form-item">
             <span class="form-item__label">인증번호</span>
             <div class="form-item__content">
-              <input type="text" class="input" placeholder="‘-’없이 숫자만 입력해주세요."  v-model="form.number">                   
+              <span class="input"><input type="text" class="input" placeholder="‘-’없이 숫자만 입력해주세요."  v-model="form.number"></span>
               <span class="time" ref="time">{{ TimerStr }}</span>  
             </div>         
             <p class="form-item__error" v-if="numberErrorMsg">인증번호를 입력해주세요.</p>        

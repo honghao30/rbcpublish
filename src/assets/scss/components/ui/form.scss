@@ -193,9 +193,7 @@ $formLabelWidth : 120px;
     }
     &__error {
       margin-bottom:-24px;
-      font-size:14px;
-      line-height: 24px;
-      color:#f56c6c;
+      @include fontoption(14px,$errorColor,400,24px);
       width:100%;
       padding-left:$formLabelWidth;;
     }
@@ -205,6 +203,7 @@ $formLabelWidth : 120px;
 
 .form-table {
   .form-item__label {
+    @include fontoption(16px,#000,500,26px);
     &.required:before {
       content:'*';
       color:#f56c6c;
@@ -280,7 +279,7 @@ $formLabelWidth : 120px;
     padding: 0 12px;    
     width: 100%;
     &::placeholder {
-      color: #999
+      @include fontoption(16px,#999,400,26px);      
     }
   }
 

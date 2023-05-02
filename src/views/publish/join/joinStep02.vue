@@ -40,7 +40,7 @@
                     <div class="form-item__content" v-if="showall">
                         <div class="form-item-row">
                             <div class="input-item">   
-                                <input type="text" class="input" placeholder="‘-’없이 10자리 숫자만 입력해주세요." v-model="form.certificate">
+                                <span class="input"><input type="text" class="input" placeholder="‘-’없이 10자리 숫자만 입력해주세요." v-model="form.certificate"></span>
                                 <ButtonCmp
                                     type="btn-default-line"
                                     @click="checkCertificate"                                    
@@ -55,7 +55,7 @@
                     <div class="form-item__content" v-else>
                         <div class="form-item-row">
                             <div class="input-item">   
-                                <input type="text" class="input" :value="certificatetemp" disabled>                            
+                              <span class="input"><input type="text" class="input" :value="certificatetemp" disabled></span>
                             </div>
                         </div>                       
                         <p class="guide-text black">사업자등록번호 인증이 완료되었습니다.</p>
@@ -68,7 +68,7 @@
                   <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item">
-                        <input type="text" class="input" :value="filesName">
+                        <span class="input"><input type="text" class="input" :value="filesName"></span>
                         <input type="file" id="fileUp" class="input" @change="onFileChanged">
                         <label for="fileUp" class="btn btn-default-line">파일찾기</label>
                       </div>                      
@@ -85,7 +85,7 @@
                   <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item">   
-                        <input type="text" class="input" placeholder="사업자등록증에 등록된 법인명(단체명)을 입력해주세요." v-model="form.companyname">
+                        <span class="input"><input type="text" class="input" placeholder="사업자등록증에 등록된 법인명(단체명)을 입력해주세요." v-model="form.companyname"></span>
                       </div>
                     </div>  
                     <p class="form-item__error" v-if="companynameErrorMsg">법인명(단체명)을 입력해주세요.</p>                   
@@ -98,7 +98,7 @@
                   <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item">   
-                        <input type="text" class="input" placeholder="사업자등록증에 등록된 첫번째 업태명을 입력해주세요."  v-model="form.biztype">
+                        <span class="input"><input type="text" class="input" placeholder="사업자등록증에 등록된 첫번째 업태명을 입력해주세요."  v-model="form.biztype"></span>
                       </div>
                     </div>
                     <p class="form-item__error" v-if="biztypeErrorMsg">사업자등록증에 등록된 첫번째 업태명을 입력해주세요.</p>                   
@@ -112,7 +112,7 @@
                   <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item">   
-                        <input type="text" class="input" placeholder="사업자등록증에 등록된 첫번째 종목명을 입력해주세요."   v-model="form.bizevent">
+                        <span class="input"><input type="text" class="input" placeholder="사업자등록증에 등록된 첫번째 종목명을 입력해주세요."   v-model="form.bizevent"></span>
                       </div>
                     </div>
                     <p class="form-item__error" v-if="bizeventErrorMsg">사업자등록증에 등록된 첫번째 종목명을 입력해주세요.</p>                   
@@ -126,7 +126,7 @@
                   <div class="form-item__content">
                     <div class="form-item-row">
                       <div class="input-item post">
-                        <input type="text" class="input" v-model="form.postcode">
+                        <span class="input"><input type="text" class="input" v-model="form.postcode"></span>
                         <ButtonCmp
                             type="btn-default-line"
                             @click="findPost"                           
@@ -137,12 +137,55 @@
                     </div> 
                     <div class="form-item-row">
                       <div class="input-item address">
-                        <input type="text" class="input" v-model="form.addr1">  <input type="text" class="input" v-model="form.addr2">
+                        <span class="input"><input type="text" class="input" v-model="form.addr1"></span> <span class="input"><input type="text" class="input" v-model="form.addr2"></span>
                       </div>
                     </div>
                   </div> 
                 </td>
-              </tr>                      
+              </tr>      
+              <tr>
+                <th>
+                  <span class="form-item__label required">권한</span>
+                </th>
+                <td>
+                  <div class="form-item__content authority">
+                    <dl class="isSelect">
+                      <dt>
+                        <!-- 체크박스가 아닌 라디오 박스가 맞는거 아닌지 기획 확인필요
+                        두개 동시에 체크 되는 경우는 없으니 -->
+                        <span class="checkbox">
+                          <input type="checkbox"  v-model="selecteAuth" id="Auth_1" value="Auth_1"  />
+                          <label for="Auth_1"><span class="checkbox__text">마스터 권한</span></label>
+                        </span>
+                      </dt>
+                      <dd>
+                        <ul>
+                          <li>사업자등록증 제출 필수 (○)</li>
+                          <li>브랜드를 직접 개설 (○)</li>
+                          <li>브랜드 관리자로 위임을 받음(○)</li>
+                          <li>운영자 승인 없이 바로 가입 완료(○)</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <span class="checkbox">
+                          <input type="checkbox"   v-model="selecteAuth" id="Auth_2" value="Auth_2" />
+                          <label for="Auth_2"><span class="checkbox__text">매니저 권한</span></label>
+                        </span>
+                      </dt>
+                      <dd>
+                        <ul>
+                          <li>사업자등록증 제출 필수 (X)</li>
+                          <li>브랜드를 직접 개설 (X)</li>
+                          <li>브랜드 관리자로 위임을 받음(○)</li>
+                          <li>운영자 승인 없이 바로 가입 완료(○)</li>
+                        </ul>                         
+                      </dd>
+                    </dl>                    
+                  </div>                   
+                </td>
+              </tr>                
             </tbody>
           </table>
         </div> 
@@ -188,8 +231,9 @@ import CertificateMsg from '@/views/publish/join/CertificateMsg.vue';
           bizevent: '',
           postcode: '',
           addr1: '',
-          addr2: ''
+          addr2: ''         
         },   
+        selecteAuth: ['Auth_1'],
         certificateErrorMsg: false,
         companynameErrorMsg: false,
         biztypeErrorMsg: false,
@@ -248,7 +292,6 @@ import CertificateMsg from '@/views/publish/join/CertificateMsg.vue';
       findPost () {
         alert('우편번호 잦기')
       }
-
     }      
   }
 </script>

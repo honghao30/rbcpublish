@@ -10,13 +10,15 @@ $desktop: "screen and (min-width : 769px)";
 $desktop1025: "screen and (min-width : 1025px)";
 
 //폰트 
-@mixin fontoption($font-tsize, $font-color, $font-weight) {
+@mixin fontoption($font-tsize, $font-color, $font-weight,$line-height) {
     font-family: $font-family;
     font-size: $font-tsize;
     color: $font-color;
     font-weight: $font-weight;
-    line-height: 1.43;
+    line-height: $line-height;
     letter-spacing: normal;
+    font-style: normal;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 //긴 문장 처리
@@ -34,5 +36,9 @@ $desktop1025: "screen and (min-width : 1025px)";
     }
 }
 
+//color values
+$defaultColor: #000000;
 $pointColor: #2F77FB;
-$mobileDeviceWidth: 768px
+$grayColor: #DDDDDD;
+$errorColor: #FF4830;
+$mobileDeviceWidth: 768px 

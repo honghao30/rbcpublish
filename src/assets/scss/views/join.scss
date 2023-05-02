@@ -16,12 +16,8 @@
         li {
             position: relative;            
             list-style: none;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 28px;
             text-align: center;
-            color: #666666;
+            @include fontoption(18px,#666666,500,28px);
             width: calc(100% / 4 );
             display: flex;
             justify-content: center;            
@@ -114,11 +110,7 @@
                 text-align: left;
                 border-bottom: 1px solid #F0F0F0;          
                 padding-left:10px;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 26px;
-                color: #000000;   
+                @include fontoption(16px,#000,500,26px);
                 vertical-align: top;     
                 padding-top:25px;        
             }
@@ -131,11 +123,7 @@
                 }
                 .guide-text {
                     margin-top:7px;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color: #2F77FB;     
+                    @include fontoption(14px,#2F77FB,400,26px);   
                     &.black {
                         color: #000;
                     }               
@@ -189,14 +177,9 @@
         }
     }
     .btn-default-line {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 26px;
-        color: #4A5567;
+        @include fontoption(14px,#4A5567,700,42px);
         margin-left:10px;
-        height: 42px;
-        line-height: 42px;
+        height: 42px;        
         cursor: pointer;
         background-color: #fff;
         border: 1px solid #4A5567;
@@ -215,11 +198,49 @@
         background-image: url('/src/assets/images/icon/icon_exclamation_circle.png');
         background-repeat: no-repeat;
         background-position: 0 center;
-        color:#FF4830;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 24px;        
+        @include fontoption(14px,#FF4830,400,24px);     
+    }
+    .authority {
+        display: flex;
+        dl {
+            width: 100%;
+            max-width: 590px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            &.isSelect {
+                border:1px solid #2F77FB;
+            }
+            dt {
+                border-bottom: 1px solid #ddd; 
+                @include fontoption(16px,#000,400,26px); 
+                padding:16px;
+            }
+            dd {
+                padding:16px;
+                ul {
+                    li {
+                        position: relative;
+                        @include fontoption(16px,#000,400,26px); 
+                        &:before {
+                            content: '';
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 50%;                            
+                            background: #000000;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right:10px;
+                        }                        
+                    }
+                    li+li{
+                        margin-top:4px;
+                    }
+                } 
+            }
+            &+dl{
+                margin-left: 10px;
+            }
+        }
     }
 }
 .modal__container {

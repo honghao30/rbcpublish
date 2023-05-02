@@ -18,9 +18,9 @@ $radius: 8px;
   padding:0 20px;
   cursor: pointer;
 }
-@mixin btntype($btnFontSize,$btnBorder,$btnColor,$btnFontColor,$radius, $btnHoverColor) {  
+@mixin btntype($btnFontSize,$btnBorder,$btnBGColor,$btnColor,$radius, $btnHoverColor,$btnHoverFtColor) {  
   font-size: $btnFontSize;
-  border: $btnBorder;
+  border: 1px solid $btnBorder;
   color: $btnColor;
   background-color: $btnBGColor;
   border-radius: $radius;
@@ -30,9 +30,9 @@ $radius: 8px;
   &.active:focus, 
   &:active:hover{
     background-color: $btnHoverColor;
-    color: $btnHoverColor;
-    text-decoration: none;
-    border-color: $btnHoverColor;
+    color: $btnHoverFtColor;
+    border: 1px solid $btnBorder;
+    text-decoration: none;    
   }
 }
 
@@ -54,29 +54,13 @@ $radius: 8px;
   }
 }
 
-
-
-
-//icon 
-.icon-eye {
-  width: 22px;
-  height:18px;
-  background-image: url('/src/assets/images/icon/icon_eye.png');
-  background-repeat: no-repeat;
-  background-position: center;  
-}
-
+//button List
 .btn-blue {
+  @include btntype(16px,$pointColor,$pointColor,#fff,8px, $pointColor,#fff);
   width: 126px;
   height: 48px;
-  background: #2F77FB;
-  border-radius: 8px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
   line-height: 24px;           
-  text-align: center;            
-  color: #FFFFFF;            
+  text-align: center;          
 }
 .btn-blue-line {
   width: 126px;
@@ -90,4 +74,25 @@ $radius: 8px;
   line-height: 24px;           
   text-align: center;            
   color: #2F77FB;          
+}
+.btn-default-line {
+  @include btntype(14px,#4A5567,#fff,#4A5567,8px,  #fff,#4A5567);  
+  font-weight: 700;
+  margin-left:10px;
+  height: 42px;
+  line-height: 42px;
+  cursor: pointer;
+}
+
+
+
+$iconBsUrl: '/src/assets/images/icon/';
+
+//icon List
+.icon-eye {
+  width: 22px;
+  height:18px;
+  background-image: url('#{$iconBsUrl}icon_eye.png');
+  background-repeat: no-repeat;
+  background-position: center;  
 }

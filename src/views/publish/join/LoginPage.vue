@@ -9,7 +9,7 @@
           <div class="form-item">
             <span class="form-item__label">아이디</span>
             <div class="form-item__content">
-              <input type="text" class="input" placeholder="아이디를 입력해주세요." v-model="form.id">            
+              <span class="input"><input type="text" class="input" placeholder="아이디를 입력해주세요." v-model="form.id"></span>
             </div>         
             <p class="form-item__error" v-if="idErrorMsg">아이디를 입력해주세요.</p> 
           </div>       
@@ -21,8 +21,8 @@
                 iconname="icon-eye"   
                 @click="toggleShow"                      
               ><span class="irtext">비밀번호 보이기</span></ButtonCmp>
-              <input  v-if="showPassword" type="text" class="input" placeholder="비밀번호를 입력해주세요."  v-model="form.pw">     
-              <input v-else type="password" class="input" placeholder="비밀번호를 입력해주세요."  v-model="form.pw"> 
+              <span class="input"><input  v-if="showPassword" type="text" class="input" placeholder="비밀번호를 입력해주세요."  v-model="form.pw">     
+              <input v-else type="password" class="input" placeholder="비밀번호를 입력해주세요."  v-model="form.pw"> </span>
                        
             </div>         
             <p class="form-item__error" v-if="pwErrorMsg">비밀번호를 입력해주세요.</p>        
@@ -43,8 +43,8 @@
           </span>          
         </div>
         <div class="idfind">
-          <router-link to="#">아이디 찾기</router-link>
-          <router-link to="#">비밀번호 찾기</router-link>
+          <router-link to="/IdFind">아이디 찾기</router-link>
+          <router-link to="/pwFind">비밀번호 찾기</router-link>
         </div>        
     </div>
 
