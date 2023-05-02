@@ -2,10 +2,11 @@
   <div class="inner">
     <PageTitle pagetitle="공지사항" />
     <div class="category-tab">
-      <ul>
+      <ul class="tab-list">
         <li 
           v-for="(item, i) in category" 
           :key="i"
+          class="tab-item"
           :class="[{active: activeTabIndex === i}]"
         >
           <a role="button" @click="tabCtrl(i)"><span>{{ item }}</span></a>

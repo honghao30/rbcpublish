@@ -15,7 +15,7 @@
         <a role="tab" 
           @click="tabCtrl(i)"
         >
-          {{ tab.tabTitle }}
+          <span>{{ tab.tabTitle }}</span>
         </a>
       </li>
     </ul>

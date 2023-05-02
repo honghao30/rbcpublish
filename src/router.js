@@ -87,7 +87,7 @@ const route = [
     }    
   },    
   {
-    path: "/", 
+    path: "/notice", 
     component: NoticeView,
     meta: {      
       tittle: '공지사항'
