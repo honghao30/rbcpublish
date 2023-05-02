@@ -15,12 +15,22 @@
 <script>
 export default {
     props:{
-        step: Number
+        step: Number,
+        agency: Boolean
     },
     data() {
         return{
-            stepTitle: ['약관동의', '기업정보 입력', '회원정보 입력', '가입완료'],
+            stepTitle: [],
+            stepTitleCompany: ['약관동의', '기업정보 입력', '회원정보 입력', '가입완료'],
+            stepTitleAgency: ['약관동의', '대행사정보 입력', '회원정보 입력', '가입완료'],
             activeStep: this.step - 1
+        }
+    },
+    mounted () {
+        if(!this.agency) {
+            this.stepTitle = this.stepTitleCompany
+        }else {
+            this.stepTitle = this.stepTitleAgency
         }
     }
 }
