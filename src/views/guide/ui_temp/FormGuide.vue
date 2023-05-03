@@ -117,16 +117,14 @@
                 <td>
                   <div class="form-item__content">
                     <div class="form-item-row">
-                      <div class="input-item">
+                      <div class="input-item addr">
                         <input type="text" class="input">
                         <button>우편번호</button>
                       </div>
                     </div> 
                     <div class="form-item-row">
-                      <div class="input-item">
+                      <div class="input-item addr">
                         <input type="text" class="input">
-                      </div>
-                      <div class="input-item">
                         <input type="text" class="input">
                       </div>
                     </div>

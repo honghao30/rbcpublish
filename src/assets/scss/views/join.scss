@@ -112,10 +112,9 @@
             th {
                 text-align: left;
                 border-bottom: 1px solid #F0F0F0;          
-                padding-left:10px;
                 @include fontoption(16px,#000,500,26px);
                 vertical-align: top;     
-                padding-top:25px;        
+                padding:28px 0 28px 16px;        
             }
             td {
                 padding-right:20px;
@@ -124,19 +123,9 @@
                     line-height: 26px; 
                     color: #999999;
                 }
-                .guide-text {
-                    margin-top:7px;
-                    @include fontoption(14px,#2F77FB,400,26px);   
-                    &.black {
-                        color: #000;
-                    }               
-                    &+.guide-text {
-                        margin-top: 4;
-                    }
-                }
             }
+
             .input-item {
-                width: 100%;
                 position: relative;
                 input[type='file'] {
                     position: absolute;
@@ -164,6 +153,32 @@
                         background-color: #F4F4F4;
                     }                    
                 }
+                &.ip {
+                    gap: 10px;
+                    button {
+                        min-width: 74px;
+                        margin-left:0;
+                    }
+                    +.input-item {
+                        margin-top: 8px;
+                        padding-left:0;
+                    }
+                    +.btn-default-line {
+                        margin: 8px 0 0;
+                    }
+                }
+                &.service {
+                    .checkbox + .checkbox {
+                        display:inline-block;
+                    }
+                }
+                &.w--half {
+                    display:flex;
+                    justify-content:space-between;
+                    > div {
+                        width: 50%;
+                    }
+                }
             }
             .form-item__label.required {
                 &::before {
@@ -177,6 +192,38 @@
                     content: '*';
                 }
             }
+            .service-range {
+                .form-item-row {
+                    margin-top:0;
+                }
+                .form-item-row__title {
+                    font-weight: 700;
+                    flex:0 240px;
+                    line-height: 42px;
+                }
+                .service-list {
+                    flex:auto;
+                    display: flex;
+                    flex-wrap:wrap;
+                    li {
+                        width: 33.3%;
+                        height: 42px;
+                        display:inline-flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .agency {
+                .url {
+                    display: flex;
+                    align-items:center;
+                    gap: 12px
+                }
+            }
+            .guide-text {
+                margin-top:4px;
+            }
+            
         }
     }
     .btn-default-line {
@@ -244,6 +291,13 @@
                 margin-left: 10px;
             }
         }
+    }
+    .guide-text {
+        margin-top:16px;
+        @include fontoption(14px,#2F77FB,400,24px);   
+        &.black {
+            color: #000;
+        }               
     }
 }
 .modal__container {
@@ -324,6 +378,7 @@
         font-size: 16px;
         line-height: 26px;
         color: #666;
+        overflow-y:auto
     } 
 }
 .join-compt__wrap {

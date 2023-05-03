@@ -1,7 +1,7 @@
 <template>
   <div class="join">
-    <PageTitle pagetitle="기업담당자 회원가입" />  
-    <JoinStep :step="3"/>
+    <PageTitle pagetitle="대행사 회원가입" />  
+    <JoinStep :step="3" :agency=true />
     <PageTitleH3 titleh3="회원정보 입력" noticeinfo="필수 입력값" />
     <form  ref="form" :model="form">
         <div class="table__wrap">
@@ -110,7 +110,7 @@
                 </td>
               </tr>              
               <tr>
-                <th scope="row"><span class="form-item__label required">담당자 연락처</span></th>
+                <th scope="row"><span class="form-item__label">담당자 연락처</span></th>
                 <td>
                   <div class="form-item__content">
                     <div class="form-item-row">       
@@ -118,7 +118,7 @@
                         <span class="input"><input type="text" class="input" placeholder="‘-’없이 자리 숫자만 입력해주세요."   v-model="form.tel"></span>
                       </div>                    
                     </div> 
-                    <p class="form-item__error" v-if="telErrorMsg">전화번호를 입력해주세요.</p>                       
+                    <p class="form-item__error" v-if="telErrorMsg">연락처를 입력해주세요.</p>                       
                   </div>
                 </td>
                 <th scope="row"><span class="form-item__label">내선번호</span></th>
@@ -142,7 +142,7 @@
         <ButtonCmp
           type="btn-blue"     
           @click="onSubmit"     
-        >신청하기</ButtonCmp>        
+        >회원가입</ButtonCmp>        
       </div>
   </form>
         <ModalView          
