@@ -7,7 +7,7 @@
     .login-title__wrap--top {
         text-align: center;
        .page-title {
-         margin-bottom:10px;
+         margin-bottom:12px;
         }
         p {
             @include fontoption(16px,#000,400,26px);
@@ -121,6 +121,45 @@
                 color: #FFF;
                 cursor: pointer;
             }
+        }
+    }
+}
+
+@media #{$phone} {
+    .login {
+        max-width:656px;
+        margin: 0 auto;
+        padding: 0 16px;
+        .login-title__wrap--top {
+            p {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+        .form-list {
+            margin: 32px 0 22px 0;
+            .form-item {
+                font-size: 14px;
+                padding: 16px 0;
+                .form-item__label {      
+                    padding: 0 0 12px 0;
+                }
+                .form-item__content {
+                    width: 100%;
+                    padding-right: 0;
+                    .btn-only-icon {
+                        right: 15px;
+                    }
+                }
+                .form-item__error {
+                    background-position: 0;
+                    padding-left: 17px;
+                }
+            }
+        }
+        .help-menu__wrap--bottom {
+            margin-top: 13.5px;
+            font-size: 14px;
         }
     }
 }

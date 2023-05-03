@@ -9,6 +9,7 @@ import NoticeView from './views/publish/customer/Notice';
 import LoginPage from './views/publish/join/LoginPage';
 import IdFind from './views/publish/join/IdFind';
 import pwFind from './views/publish/join/pwFind';
+import SignUp from './views/publish/join/SignUp';
 import JoinStep01 from './views/publish/join/JoinStep01';
 import JoinStep02 from './views/publish/join/JoinStep02';
 import JoinStep03 from './views/publish/join/JoinStep03';
@@ -73,6 +74,13 @@ const route = [
     component: pwFind,
     meta: {      
       tittle: '비밀번호 찾기'
+    }    
+  },
+  {
+    path: "/SignUp", 
+    component: SignUp,
+    meta: {      
+      tittle: '회원가입'
     }    
   },
   {
