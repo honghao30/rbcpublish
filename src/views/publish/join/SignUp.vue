@@ -4,7 +4,7 @@
         <PageTitle pagetitle="회원가입" />
         <p>회원가입 유형을 선택해주세요</p>
       </div>
-      <div class="signup-wrap">
+      <div class="signup__wrap">
         <div class="signup-item">
           <div class="signup-item__tit">
             <p>서비스를 이용하고 있는 <span>기업 담당자</span> 인가요?</p>
