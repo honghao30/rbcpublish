@@ -1,7 +1,7 @@
 <template>
 	<div class="join">
 		<PageTitle pagetitle="대행사 회원가입" />   
-		<JoinStep :step="2" :agency=true />
+		<JoinStep :step="2" />
 		<PageTitleH3 titleh3="대행사정보 입력" noticeinfo="필수 입력값" />
 		<form  ref="form" :model="form">
 			<div class="table__wrap">
@@ -101,22 +101,23 @@
 					<th scope="row"><span class="form-item__label required">기업주소</span></th>
 					<td>
 						<div class="form-item__content">
-						<div class="form-item-row">
-							<div class="input-item post">
-							<span class="input"><input type="text" class="input" v-model="form.postcode"></span>
-							<ButtonCmp
-								type="btn-default-line"
-								@click="findPost"                           
-							>
-								우편번호
-							</ButtonCmp> 
+							<div class="form-item-row">
+								<div class="input-item post">
+								<span class="input"><input type="text" class="input" v-model="form.postcode"></span>
+								<ButtonCmp
+									type="btn-default-line"
+									@click="findPost"                           
+								>
+									우편번호
+								</ButtonCmp> 
+								</div>
+							</div> 
+							<div class="form-item-row">
+								<div class="input-item address">
+								<span class="input"><input type="text" class="input" v-model="form.addr1"></span> <span class="input"><input type="text" class="input" v-model="form.addr2"></span>
+								</div>
 							</div>
-						</div> 
-						<div class="form-item-row">
-							<div class="input-item address">
-							<span class="input"><input type="text" class="input" v-model="form.addr1"></span> <span class="input"><input type="text" class="input" v-model="form.addr2"></span>
-							</div>
-						</div>
+							<p class="form-item__error" v-if="postcodeErrorMsg">기업주소를 입력해주세요.</p>   
 						</div> 
 					</td>
 					</tr>                    
@@ -202,7 +203,7 @@
 										</div>
 									</div>
 								</div>  
-								<p class="form-item__error" v-if="companynameErrorMsg">법인명(단체명)을 입력해주세요.</p>                   
+								<p class="form-item__error" v-if="serviceErrorMsg">제공 서비스를 선택해 주세요.</p>                   
 							</div>
 						</td>
 					</tr> 
@@ -222,14 +223,25 @@
 											<label for="agencyN"><span class="checkbox__text">중계사 아님</span></label>
 										</div>
 									</div>
-									<div class="input-item w--half url"> 
-										<label for="url">대화방 수신 URL</label>
+									<div class="input-item w--half"  v-if="form.agency === 'agencyY'"> 
+										<label for="url" class="item-label">대화방 수신 URL</label>
 										<span class="input">
 											<input type="text" id="url" />	
 										</span>	
 									</div>
-								</div>  
-								<p class="form-item__error" v-if="companynameErrorMsg">법인명(단체명)을 입력해주세요.</p>                   
+									<div class="input-item w--half"  v-if="form.agency === 'agencyN'"> 
+										<span class="item-label">중계사 선택</span>	
+										<ButtonCmp
+											type="btn-default-line"                           
+										>
+										중계사 선택
+										</ButtonCmp>
+										<span class="result-text">선택 중개사 <em class="point">4</em>개</span>	
+									</div>
+								</div> 
+								<p class="form-item__error" v-if="agencyErrorMsg">중계사를 선택해주세요.</p>  
+								<p class="guide-text" v-if="form.agency === 'agencyY'">※ 중계사 지정 안내<br>중계사로 지정된 브랜드의 모든 메시지 및 자동응답메시지의 트래픽이 모두 중계사에게 부과됩니다.<br>대행사가 중계사로 지정되는 경우 해당 대행사가 메시지 청약 및 과금을 대행한다는 것에 대한 동의 절차를 진행해야 합니다.</p>
+								<p class="guide-text" v-if="form.agency === 'agencyN'">※ 중계사 선택 안내<br>반드시 청약이 완료된 중계사를 선택해야 하며 메시지를 수신하기 위한 webhook.url 정보를 해당 중계사의 시스템에 등록해야 합니다. </p>              
 							</div>
 						</td>
 					</tr>               
@@ -239,9 +251,9 @@
 							<div class="form-item__content">
 								<div class="form-item-row">
 									<div class="input-item">
-									<span class="input"><input type="text" class="input" :value="filesName"></span>
-									<input type="file" id="fileUp" class="input" @change="onFileChanged">
-									<label for="fileUp" class="btn btn-default-line">파일찾기</label>
+									<span class="input"><input type="text" class="input" :value="filesName2"></span>
+									<input type="file" id="fileUp2" class="input">
+									<label for="fileUp2" class="btn btn-default-line">파일찾기</label>
 									</div>                      
 								</div>                    
 								<p class="guide-text black">&middot; 파일형식: JPG, PNG, PDF, TIFF(최대 5MB)</p>
@@ -399,9 +411,12 @@ import JoinStep from '@/views/publish/join/JoinStep';
         biztypeErrorMsg: false,
         bizeventErrorMsg: false,
         postcodeErrorMsg: false,
+		serviceErrorMsg: false,
+		agencyErrorMsg: false,
         showall: true,
         files: '',   
         filesName: '',
+		filesName2: '',
         isModalViewed: false,
         certificatetemp: '123456789'
       }
@@ -412,22 +427,30 @@ import JoinStep from '@/views/publish/join/JoinStep';
           this.certificateErrorMsg = true;
           return
         }
+		if (this.form.companyname === '') {
+          this.companynameErrorMsg = true;
+          return
+        }
         if (this.form.biztype === '') {          
           this.biztypeErrorMsg = true;
           return
         }   
-        if (this.form.bizeventErrorMsg === '') {          
+        if (this.form.bizevent === '') {          
           this.bizeventErrorMsg = true;
           return
         } 
-        if (this.form.postcode === '') {          
+        if (this.form.postcode === '' || this.form.addr1 === '' || this.form.addr2 === '') {          
           this.postcodeErrorMsg = true;
           return
         }
-        if (this.form.addr2 === '') {          
-          this.postcodeErrorMsg = true;
+		if (!this.form.service.length) {          
+          this.serviceErrorMsg = true;
           return
-        }        
+        } 
+		if (this.form.agency === '') {          
+          this.agencyErrorMsg = true;
+          return
+        }
       },
       checkCertificate () {
         if (this.form.certificate === '') {

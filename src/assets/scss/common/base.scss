@@ -22,6 +22,12 @@ legend {position: absolute;width: 1px;height: 1px;clip: rect(0 0 0 0);overflow: 
 caption{position: absolute;width: 1px;height: 1px;clip: rect(0 0 0 0);overflow: hidden;}
 .clfx:after{ clear: both; content: "."; display: block; height: 0; visibility: hidden; font-size: 0;}
 a[role="button"] {cursor:pointer}
-
+em {font-style: normal;}
 .blind,.irtext { position: absolute;width: 1px;height: 1px;clip: rect(0 0 0 0);overflow: hidden;}
 
+.w--full {
+    width: 100%;
+}
+.point {
+    color:$pointColor;
+}

@@ -74,8 +74,8 @@ $bordersColor: #DDDDDD;
     &:after{
       content:"";
       border:2px solid #fff;
-      border-width:0 2px 2px 0;
-      height:8px;
+      border-width:0 3px 3px 0;
+      height:9px;
       position:absolute;
       top:7px;
       left: 8px;
@@ -96,6 +96,7 @@ $bordersColor: #DDDDDD;
     position:relative;
     display:inline-flex;
     align-items:center;
+    
     &:before{
       content:"";
       display:inline-block;
@@ -109,7 +110,19 @@ $bordersColor: #DDDDDD;
       margin-right:10px;
       position:relative;
       top:1px;
-    }    
+    }   
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 13px;
+      height: 13px;
+      border-radius: 100%;
+      background: transparent;
+      border-radius:100%;
+      box-shadow: none;
+    }  
   } 
   input[type=radio]:checked + label {
     &::before {
@@ -117,16 +130,7 @@ $bordersColor: #DDDDDD;
     }
     &::after {
       content: '';
-      position: absolute;
-      top: 6px;
-      left: 3px;
-      width: 14px;
-      height: 14px;
-      border-radius: 100%;
-      border-color:$pointColor;
       background: $pointColor;
-      border-radius:100%;
-      box-shadow: none;
     }    
   }
 }

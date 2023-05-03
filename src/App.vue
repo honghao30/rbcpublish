@@ -33,8 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./assets/scss/common/base.scss";
   @import "./assets/scss/common/_variables.scss";
+  @import "./assets/scss/common/base.scss";
   @import "./assets/scss/components/ui/table.scss";  
   @import "./assets/scss/components/ui/typography.scss";  
   @import "./assets/scss/components/ui/button.scss";  

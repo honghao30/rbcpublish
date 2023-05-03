@@ -143,6 +143,7 @@
                 }
                 &.post {
                     width:50%;
+                    padding-right: 5px;
                     input {
                         background-color: #F4F4F4;
                     }
@@ -214,10 +215,16 @@
                 }
             }
             .agency {
-                .url {
+                .input-item {
                     display: flex;
                     align-items:center;
-                    gap: 12px
+                    justify-content: flex-start;
+                    .item-label {
+                        margin-right:12px;
+                    }
+                }
+                .result-text {
+                    margin-left:20px;
                 }
             }
             .guide-text {
@@ -275,7 +282,7 @@
                             content: '';
                             width: 4px;
                             height: 4px;
-                            border-radius: 50%;                            
+                            border-radius:50%;                       
                             background: #000000;
                             display: inline-block;
                             vertical-align: middle;
