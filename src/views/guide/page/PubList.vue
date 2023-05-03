@@ -1,14 +1,19 @@
 <template>
-    <WorkList />  
+    <div>
+        <HeaterGuide />
+        <WorkList />  
+    </div>
 </template>
 
 <script>
-import WorkList from '../cmp/WorkList.vue'
+import WorkList from '../cmp/WorkList'
+import HeaterGuide from '../cmp/Header.vue'
 
 export default {
     name: 'PubGuides',
     components: {        
-        WorkList     
+        WorkList,
+        HeaterGuide    
     },
     metaInfo: {
       title: 'Publishing Guides'
