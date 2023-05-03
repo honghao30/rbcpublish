@@ -23,6 +23,7 @@ caption{position: absolute;width: 1px;height: 1px;clip: rect(0 0 0 0);overflow: 
 .clfx:after{ clear: both; content: "."; display: block; height: 0; visibility: hidden; font-size: 0;}
 a[role="button"] {cursor:pointer}
 em {font-style: normal;}
+button {border:0;outline: none;}
 .blind,.irtext { position: absolute;width: 1px;height: 1px;clip: rect(0 0 0 0);overflow: hidden;}
 
 .w--full {
