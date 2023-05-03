@@ -15,6 +15,8 @@ import JoinStep02 from './views/publish/join/JoinStep02';
 import JoinStep03 from './views/publish/join/JoinStep03';
 import JoinStep04 from './views/publish/join/JoinStep04';
 import AgencyJoinStep01 from './views/publish/join/AgencyJoinStep01';
+import AgencyJoinStep02 from './views/publish/join/AgencyJoinStep02';
+import AgencyJoinStep03 from './views/publish/join/AgencyJoinStep03';
 import AgencyJoinStep04 from './views/publish/join/AgencyJoinStep04';
 Vue.use(VueRouter);
 
@@ -87,7 +89,7 @@ const route = [
     path: "/joinStep01", 
     component: JoinStep01,
     meta: {      
-      tittle: '약관동의'
+      tittle: '회원가입'
     }    
   }, 
   {
@@ -115,7 +117,21 @@ const route = [
     path: "/agencyjoinStep01", 
     component: AgencyJoinStep01,
     meta: {      
-      tittle: '약관동의'
+      tittle: '회원가입'
+    }    
+  }, 
+  {
+    path: "/agencyjoinStep02", 
+    component: AgencyJoinStep02,
+    meta: {      
+      tittle: '회원가입'
+    }    
+  }, 
+  {
+    path: "/agencyjoinStep03", 
+    component: AgencyJoinStep03,
+    meta: {      
+      tittle: '회원가입'
     }    
   }, 
   {
