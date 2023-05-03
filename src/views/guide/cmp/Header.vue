@@ -1,6 +1,6 @@
 <template>
   <div class="header__wrap">
-    <header class="header">
+    <header class="header-guid">
       <div class="header__logo">
 		<h1>
       <router-link to="/PubGuides/">
@@ -53,4 +53,26 @@ export default {
 
 <style lang="scss" scoped>
 @import url('@/assets/scss/common/guide.scss');
+.header-guid {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background:#373d55;
+        color:#fff;	
+        padding:15px 24px;
+        z-index: 50;
+        position: relative;
+        .header__logo {
+            font-size:26px;
+            h1 {width:300px;background: none;}
+        }
+        
+        .header__util-menu--right {
+            display: flex;
+            justify-content: flex-end;
+            gap:20px;
+            font-size:20px;
+        }
+    }
 </style>

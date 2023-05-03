@@ -227,6 +227,15 @@ import JoinStep from '@/views/publish/join/JoinStep';
         certificatetemp: '123456789'
       }
     },
+    watch: {
+      isModalViewed () {
+        if(this.isModalViewed){
+          document.documentElement.style.overflow = 'hidden'
+          return
+        }
+        document.documentElement.style.overflow = 'auto'    
+      }
+    },    
     methods: {
       onSubmit () {
         if (this.form.certificate === '') {

@@ -1,14 +1,19 @@
 <template>
-   <BasicSummary /> 
+  <div>
+    <HeaterGuide />
+    <BasicSummary /> 
+  </div>   
 </template>
 
 <script>
 import BasicSummary from './cmp/BasicSummary.vue'
+import HeaterGuide from './cmp/Header.vue'
 
 export default {
     name: 'PubGuides',
     components: {        
-        BasicSummary
+        BasicSummary,
+        HeaterGuide
     },
     metaInfo: {
       title: 'Publishing Guides'

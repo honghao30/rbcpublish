@@ -1,14 +1,18 @@
 <template>
-  <PubRull /> 
+  <div>
+      <HeaterGuide />
+      <PubRull /> 
+  </div>  
 </template>
 
 <script>
 import PubRull from '../cmp/PubRull.vue'
-
+import HeaterGuide from '../cmp/Header.vue'
 export default {
     name: 'PubGuides',
     components: {        
-        PubRull
+        PubRull,
+        HeaterGuide  
     },
     metaInfo: {
       title: 'Publishing Guides'
