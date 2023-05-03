@@ -1,6 +1,6 @@
 <template>
     <div
-      class="modal__content--inner"
+      class="modal__content--inner test-content"
     >
         <div class="modal__content--header">
             모달 제목
@@ -38,5 +38,5 @@ export default {
 </script>
 
 <style>
-
+.test-content {background: #fff;z-index: 12;}
 </style>
