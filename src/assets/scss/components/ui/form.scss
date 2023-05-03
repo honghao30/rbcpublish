@@ -267,7 +267,7 @@ $formLabelWidth : 120px;
   }
 }
 
-@media (max-width:  $mobileBreakPoint) {
+@media #{$phone} {
   $inputHeight: 45px;
   @mixin inputBasicM {  
     background-color: #fff;    

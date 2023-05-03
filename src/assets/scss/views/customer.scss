@@ -37,20 +37,7 @@
         background:url('@/assets/images/customer/ico_new.png') no-repeat 50% 50%;
     } 
 }
-
-@media (max-width:  $mobileBreakPoint) {
-    .category-tab {
-        margin-bottom: 24px;
-        ul {
-            a {
-                height:54px;
-                font-size:14px;
-                span {
-                    line-height: 14px;
-                }
-            }
-        }
-    }
+@media #{$phone} {
     .notice-table {
         .table-list {
             tbody {
