@@ -10,7 +10,7 @@
 						<span class="blind">메뉴</span>
 					</a>
 					<div class="nav__inner">
-						<a role="button" @click="closeNav()">닫기</a>
+						<a role="button" @click="closeNav()" class="nav__button--close">닫기</a>
 						<ul>
 							<li v-for="(item, i) in navMenu" :key="i" class="nav-item">
 								<router-link :to="item.to">{{ item.title }}</router-link>
