@@ -6,16 +6,22 @@
 			</div>
 			<div class="header__menu">
 				<nav class="nav">
-					<ul>
-						<li v-for="(item, i) in navMenu" :key="i" class="nav-item">
-							<router-link :to="item.to">{{ item.title }}</router-link>
-							<ul class="nav-sub" v-if="item.children">
-								<li v-for="(subItem, i) in item.children" :key="i">
-									<router-link :to="subItem.to">{{ subItem.title }}</router-link>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					<a role="button" class="nav__button" @click="openNav()">
+						<span class="blind">메뉴</span>
+					</a>
+					<div class="nav__inner">
+						<a role="button" @click="closeNav()" class="nav__button--close">닫기</a>
+						<ul>
+							<li v-for="(item, i) in navMenu" :key="i" class="nav-item">
+								<router-link :to="item.to">{{ item.title }}</router-link>
+								<ul class="nav-sub" v-if="item.children">
+									<li v-for="(subItem, i) in item.children" :key="i">
+										<router-link :to="subItem.to">{{ subItem.title }}</router-link>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</nav>
 				<div class="header__util">
 					<router-link to="/dashboard" class="link-dashboard">기업 대시보드</router-link>
@@ -44,7 +50,19 @@ export default {
 		return {
 			navMenu
 		}
+	},
+	methods: {
+		openNav() {
+			let el = document.querySelector('.nav');
+			el.classList.add('open')
+		},
+		closeNav() {
+			let el = document.querySelector('.nav');
+			el.classList.remove('open')
+		}
+
 	}
+
 }
 </script>
 

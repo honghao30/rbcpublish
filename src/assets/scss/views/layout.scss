@@ -38,15 +38,17 @@ $contentPaddingM: 16px;
 .nav {
     display:flex;
     align-items: center;
-    > ul{
-        display:flex;
-        align-items:center;
-    }
-    &:after {
-        content:'';
-        width:1px;
-        height:18px;
-        background-color:rgba(0,0,0,0.1)
+    &__inner {
+        > ul{
+            display:flex;
+            align-items:center;
+        }
+        &:after {
+            content:'';
+            width:1px;
+            height:18px;
+            background-color:rgba(0,0,0,0.1)
+        }
     }
     &-item {
         padding:0 24px;
@@ -61,7 +63,6 @@ $contentPaddingM: 16px;
                 display: block
             }
         }
-        
     }
     &-sub {
         position:absolute;
@@ -79,6 +80,13 @@ $contentPaddingM: 16px;
             }
         }
     }
+    &__button {
+        display:none;
+        &--close {
+            display: none;
+        }
+    }
+
 }
 .header__util {
     display:flex;
@@ -271,7 +279,7 @@ $contentPaddingM: 16px;
 // 모바일 
 
 @media #{$phone} {
-
+    $mobileNavWidth: 240px;
     $headerHeight: 48px;
     .inner { 
         width:100%;
@@ -295,6 +303,53 @@ $contentPaddingM: 16px;
         }
     }
     .header__menu {
+        display:block;
+    }
+    .nav {
+        display:block;
+        &__button {
+            display:inline-block;
+            
+            height: 24px;
+            width: 24px;
+            background:url('@/assets/images/layout/btn_nav.png') no-repeat 50% 50%;
+            background-size:100%;
+        }
+        &__inner {
+            position:fixed;
+            right:-$mobileNavWidth;
+            top:0;
+            transition:transform 300ms linear;
+            height:100vh;
+            width:240px;
+            background:#fff;
+            
+            > ul {
+                flex-direction: column;
+                align-items:flex-start;
+            }
+        }
+        &.open {
+            .nav__inner {
+                transform:translate(-$mobileNavWidth, 0)
+            }
+        }
+        &__item {
+            width:100%;
+        }
+        &-sub {
+            position:static;
+            display: block;
+            width:auto;
+            padding: 0;
+            border:none;
+            background-color:#fff;
+        }
+        &__button--close {
+            display: block;
+        }
+    }
+    .header__util {
         display:none;
     }
     .contents {

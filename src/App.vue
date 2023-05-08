@@ -33,8 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./assets/scss/common/base.scss";
   @import "./assets/scss/common/_variables.scss";
+  @import "./assets/scss/common/base.scss";
   @import "./assets/scss/components/ui/table.scss";  
   @import "./assets/scss/components/ui/typography.scss";  
   @import "./assets/scss/components/ui/button.scss";  
@@ -45,5 +45,6 @@ export default {
   @import "./assets/scss/views/customer.scss";
   @import "./assets/scss/views/login.scss";
   @import "./assets/scss/views/join.scss";
+  @import "./assets/scss/views/signup.scss";
   @import "element-ui/lib/theme-chalk/index.css";
 </style>
